@@ -1,5 +1,4 @@
 
-
 const inputField = document.getElementById('input-field');
 const inputButton = document.getElementById('input-btn');
 const errorMessage = document.getElementById('error-message');
@@ -13,6 +12,9 @@ const loadData = () => {
   errorMessage.innerText = '';
   itemFound.innerText = '';
   cardContainer.innerHTML = '';
+
+  //-------storing input value and validation------
+
   const inputValue = inputField.value;
   if (inputValue === "") {
     errorMessage.innerText = 'Search field can not be empty';
@@ -38,7 +40,6 @@ const displayData = (booksDetails) => {
     booksDetails.forEach(element => {
       const div = document.createElement('div');
       div.classList.add('card-sizing');
-      // div.setAttribute('width', '100px')
       div.innerHTML = `
         <div class="card">
     <img class="img-sizing" src="https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg" class="card-img-top" alt="...">
@@ -55,6 +56,7 @@ const displayData = (booksDetails) => {
   </div>`;
       cardContainer.appendChild(div);
     });
+
     itemFound.innerText = `about ${booksDetails.length} result found`;
     inputField.value = '';
 
