@@ -8,7 +8,9 @@ const itemFound = document.getElementById('item-found');
 // -----------------load data--------------
 
 const loadData = () => {
+
   //----------clear previous data------------
+
   errorMessage.innerText = '';
   itemFound.innerText = '';
   cardContainer.innerHTML = '';
@@ -40,8 +42,8 @@ const displayData = (booksDetails) => {
     booksDetails.forEach(element => {
       const div = document.createElement('div');
       div.classList.add('card-sizing');
-      div.innerHTML = `
-        <div class="card">
+      div.classList.add('card');
+      div.innerHTML = `   
     <img class="img-sizing" src="https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${element.title}</h5>
@@ -50,10 +52,7 @@ const displayData = (booksDetails) => {
       <p class="card-text">Publish:  ${element.publish_date ? element.publish_date[0] : 'N/A'}</p>
       <p class="card-text">First Publish: ${element.first_publish_year}</p>
     </div>
-    <div class="card-footer">
-      <small class="text-muted">see details</small>
-    </div>
-  </div>`;
+  `;
       cardContainer.appendChild(div);
     });
 
@@ -62,4 +61,5 @@ const displayData = (booksDetails) => {
 
   }
 }
+
 
