@@ -29,12 +29,12 @@ const loadData = () => {
     .then(data => displayData(data.docs));
 }
 
-//--------display data--------
+//--------display data and error handling--------
 
 const displayData = (booksDetails) => {
   if (booksDetails.length === 0) {
     itemFound.innerText = '';
-    errorMessage.innerText = 'No result found';
+    errorMessage.innerText = 'No result found. Please input a valid name';
     inputField.value = '';
 
   } else {
@@ -49,8 +49,8 @@ const displayData = (booksDetails) => {
       <h5 class="card-title">${element.title}</h5>
       <p class="card-text">Author:${element.author_name ? element.author_name[0] : 'N/A'}</p>
       <p class="card-text">Publisher: ${element.publisher ? element.publisher[0] : 'N/A'}</p>
-      <p class="card-text">Publish:  ${element.publish_date ? element.publish_date[0] : 'N/A'}</p>
-      <p class="card-text">First Publish: ${element.first_publish_year}</p>
+      <p class="card-text">Publish date:  ${element.publish_date ? element.publish_date[0] : 'N/A'}</p>
+      <p class="card-text">First Publish Year: ${element?.first_publish_year ?? "N/A"}</p>
     </div>
   `;
       cardContainer.appendChild(div);
