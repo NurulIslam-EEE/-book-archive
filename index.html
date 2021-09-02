@@ -11,7 +11,13 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <style>
-        .card-size {
+        .img-sizing {
+            height: 250px;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .card-sizing {
             height: 500px;
             width: 300px;
             margin-bottom: 50px;
@@ -25,7 +31,8 @@
     <section class="container my-5 col">
 
 
-        <h1 class="text-center">Search Your favourite Book</h1>
+        <h1 class="text-center">Search your favourite book</h1>
+
         <!-- input field -->
 
         <div class="mb-3 input-group">
@@ -33,16 +40,18 @@
                 aria-label="write book name">
             <button onclick="loadData()" class="btn btn-outline-primary" type="submit" id="input-btn">search</button>
         </div>
-        <!--  -->
 
-        <div id="card-container" class="flex-wrap d-flex">
+        <!-- card container -->
+        <h4 id="item-found" class="text-center "> </h4>
+        <h3 id="error-message" class="text-center text-danger"></h3>
+        <div id="card-container" class="flex-wrap d-flex justify-content-evenly">
 
 
         </div>
     </section>
 
     <!-- js -->
-    <script src=" js/script.js">
+    <script src="js/script.js">
     </script>
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
