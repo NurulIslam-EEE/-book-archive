@@ -12,7 +12,7 @@ const itemFound = document.getElementById('item-found');
   fetch(url)
     .then(response => response.json())
     .then(data => displayData(data.docs));
-}
+
 const loadData = () => {
 
   //----------clear previous data------------
